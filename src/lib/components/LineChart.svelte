@@ -3,7 +3,8 @@
 
   // series: [{ id, label, color, serie: [{ x, y }] }]
   // y = null bryter linjen (t.ex. inställda nationella prov 2020–21).
-  let { series = [], title = "", unit = "%", note = "" } = $props();
+  // labelAll: skriv ut värdet vid varje punkt — för glesa serier (få punkter).
+  let { series = [], title = "", unit = "%", note = "", labelAll = false } = $props();
 
   const W = 580;
   const H = 380;
@@ -75,6 +76,15 @@
           >
             <title>{s.label} {p.x}: {p.y}{unit}</title>
           </circle>
+          {#if labelAll && p !== lastPoint(s)}
+            <text
+              x={x(String(p.x))}
+              y={y(p.y) - 14}
+              class="pt-label"
+              text-anchor="middle"
+              style="fill: {s.color}; animation-delay: {si * 250 + pi * 120 + 200}ms"
+            >{String(p.y).replace(".", ",")}{unit}</text>
+          {/if}
         {/if}
       {/each}
       {@const last = lastPoint(s)}
@@ -147,6 +157,13 @@
     }
   }
   .end-label {
+    opacity: 0;
+    animation: pt-in 0.4s ease forwards;
+  }
+  .pt-label {
+    font-size: 13px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
     opacity: 0;
     animation: pt-in 0.4s ease forwards;
   }

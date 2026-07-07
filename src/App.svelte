@@ -1,6 +1,7 @@
 <script>
   import { appData as data } from "./lib/data/load.js";
   import Story from "./lib/story/Story.svelte";
+  import ExploreWeave from "./lib/components/ExploreWeave.svelte";
 
   const ov = data.overview;
 
@@ -79,7 +80,14 @@
       />
     {/each}
     {#each motif.nodes as n}
-      <circle cx={n.x} cy={n.y} r={n.hole ? 6.5 : 5} class="motif-node" class:hole={n.hole} />
+      <circle
+        cx={n.x}
+        cy={n.y}
+        r={n.hole ? 6.5 : 5}
+        class="motif-node"
+        class:hole={n.hole}
+        style={n.hole ? `animation-delay: ${(n.i * 137) % 3000}ms` : undefined}
+      />
     {/each}
   </svg>
   <div class="hero-inner">
@@ -114,6 +122,8 @@
 <main>
   <Story {data} />
 </main>
+
+<ExploreWeave />
 
 <section class="atgarder" aria-label="Vad kan var och en göra">
   <div class="atgarder-inner">
@@ -256,6 +266,11 @@
     stroke: rgba(255, 205, 55, 0.45);
     stroke-width: 1.5;
     stroke-dasharray: 3 3;
+    animation: hole-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes hole-pulse {
+    0%, 100% { stroke-opacity: 0.55; }
+    50% { stroke-opacity: 1; }
   }
   .hero-inner {
     position: relative;

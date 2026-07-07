@@ -157,6 +157,46 @@ export function descendantsOf(id) {
   return out;
 }
 
+// Alla förkunskaper som (direkt eller indirekt) krävs för `id`.
+export function ancestorsOf(id) {
+  const out = new Set();
+  const stack = [id];
+  while (stack.length) {
+    const c = byId.get(stack.pop());
+    for (const p of c.prereqs) {
+      if (!out.has(p)) {
+        out.add(p);
+        stack.push(p);
+      }
+    }
+  }
+  return out;
+}
+
+// Nivåordning för "skadan sprider sig"-animationen: hur många steg uppströms
+// ett begrepp ligger från det borttagna.
+export const RIPPLE_ORDER = (() => {
+  const dependents = new Map(CONCEPTS.map((c) => [c.id, []]));
+  CONCEPTS.forEach((c) => c.prereqs.forEach((p) => dependents.get(p).push(c.id)));
+  const order = new Map();
+  let frontier = [MISSING_NODE];
+  let lvl = 0;
+  while (frontier.length) {
+    const next = [];
+    for (const id of frontier) {
+      for (const d of dependents.get(id)) {
+        if (!order.has(d) && d !== MISSING_NODE) {
+          order.set(d, lvl + 1);
+          next.push(d);
+        }
+      }
+    }
+    frontier = next;
+    lvl++;
+  }
+  return order;
+})();
+
 // Längsta förkunskapskedjan fram till varje begrepp (djup i grafen).
 export const DEPTH = (() => {
   const depth = new Map();

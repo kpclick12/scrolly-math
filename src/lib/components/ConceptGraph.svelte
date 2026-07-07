@@ -13,6 +13,8 @@
     CHAIN,
     MISSING_NODE,
     descendantsOf,
+    ancestorsOf,
+    RIPPLE_ORDER,
     DEPTH,
     MAX_DEPTH,
   } from "../data/concepts.js";
@@ -69,16 +71,30 @@
 </script>
 
 <script>
-  // mode: "all" | "foundation" | "chain" | "missing" | "depth"
-  let { mode = "all", title = "" } = $props();
+  // mode: "all" | "foundation" | "chain" | "missing" | "depth" | "explore"
+  // I explore-läget är noderna klickbara; valt begrepp lyser med sina
+  // förkunskaper, och allt som bygger på det får röda ringar.
+  let { mode = "all", title = "", selected = null, onSelect = null } = $props();
+
+  const exploreAncestors = $derived(
+    mode === "explore" && selected ? ancestorsOf(selected) : null
+  );
+  const exploreDescendants = $derived(
+    mode === "explore" && selected ? descendantsOf(selected) : null
+  );
 
   const isOn = (id) => {
     if (mode === "foundation") return foundationSet.has(id);
     if (mode === "chain") return chainSet.has(id);
+    if (mode === "explore" && selected)
+      return id === selected || exploreAncestors.has(id) || exploreDescendants.has(id);
     return true;
   };
-  const isBroken = (id) => mode === "missing" && missingSet.has(id);
+  const isBroken = (id) =>
+    (mode === "missing" && missingSet.has(id)) ||
+    (mode === "explore" && selected != null && exploreDescendants.has(id));
   const isRemoved = (id) => mode === "missing" && id === MISSING_NODE;
+  const isSelected = (id) => mode === "explore" && id === selected;
 
   function edgeState(l) {
     const s = typeof l.source === "object" ? l.source.id : l.source;
@@ -93,15 +109,28 @@
           : "off";
     if (mode === "missing")
       return s === MISSING_NODE || missingSet.has(s) ? "broken" : "dim";
+    if (mode === "explore" && selected) {
+      const anc = (id) => id === selected || exploreAncestors.has(id);
+      if (anc(s) && anc(t)) return "hi";
+      if (s === selected || exploreDescendants.has(s)) return "broken";
+      return "off";
+    }
     return "dim";
   }
 
   const fillFor = (n) => {
+    if (isSelected(n.id)) return STRANDS[n.strand].color;
     if (isRemoved(n.id)) return "var(--surface-1)";
     if (isBroken(n.id)) return "var(--gridline)";
     if (mode === "depth") return depthColor(n.id);
     return STRANDS[n.strand].color;
   };
+
+  // Skadan sprider sig uppåt nivå för nivå i missa-läget.
+  const rippleDelay = (id) =>
+    mode === "missing" && missingSet.has(id)
+      ? (RIPPLE_ORDER.get(id) ?? 1) * 130
+      : 0;
 
   // Etiketter: bara där de bär berättelsen — aldrig alla 78.
   const labelled = $derived(
@@ -111,7 +140,9 @@
         ? [MISSING_NODE, "procentbegrepp", "ranta", "sannolikhet79", "linjarafunktioner"]
         : mode === "foundation"
           ? ["antal", "positionssystemet", "delarhelhet"]
-          : []
+          : mode === "explore" && selected
+            ? [selected]
+            : []
   );
   const labelSet = $derived(new Set(labelled));
 
@@ -126,19 +157,33 @@
     {/each}
 
     {#each links as l}
-      <path d={edgePath(l)} class="edge {edgeState(l)}" />
+      {@const s = typeof l.source === "object" ? l.source.id : l.source}
+      <path
+        d={edgePath(l)}
+        class="edge {edgeState(l)}"
+        style="transition-delay: {rippleDelay(s)}ms"
+      />
     {/each}
 
     {#each nodes as n (n.id)}
       <circle
         cx={n.x}
         cy={n.y}
-        r={isRemoved(n.id) ? 9 : chainSet.has(n.id) && mode === "chain" ? 8 : 6}
+        r={isRemoved(n.id) || isSelected(n.id) ? 9 : chainSet.has(n.id) && mode === "chain" ? 8 : 6}
         class="node"
         class:off={!isOn(n.id)}
         class:broken={isBroken(n.id)}
         class:removed={isRemoved(n.id)}
-        style="fill: {fillFor(n)}"
+        class:selected={isSelected(n.id)}
+        class:clickable={mode === "explore"}
+        style="fill: {fillFor(n)}; transition-delay: {rippleDelay(n.id)}ms"
+        role={mode === "explore" ? "button" : undefined}
+        tabindex={mode === "explore" ? 0 : undefined}
+        aria-label={mode === "explore" ? n.label : undefined}
+        onclick={mode === "explore" ? () => onSelect?.(n.id) : undefined}
+        onkeydown={mode === "explore"
+          ? (e) => (e.key === "Enter" || e.key === " ") && onSelect?.(n.id)
+          : undefined}
       >
         <title>{n.label} · åk {n.ak} · {STRANDS[n.strand].label}</title>
       </circle>
@@ -251,6 +296,17 @@
     stroke: var(--series-red);
     stroke-width: 2.5;
     stroke-dasharray: 3 3;
+  }
+  .node.selected {
+    stroke: var(--text-primary);
+    stroke-width: 2.5;
+  }
+  .node.clickable {
+    cursor: pointer;
+  }
+  .node.clickable:hover {
+    stroke: var(--text-primary);
+    stroke-width: 2;
   }
   .cross {
     font-size: 10px;

@@ -269,6 +269,7 @@
             <LineChart
               series={kohortSeries}
               unit="%"
+              labelAll={true}
               title="Samma årskull vid tre kontrollstationer: andel under kravnivån/med F på nationella provet"
             />
           {:else if currentStep === 12}
