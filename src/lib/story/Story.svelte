@@ -181,12 +181,12 @@
     { kicker: "Läget", headline: "Var fjärde klarar inte provet" },
     { kicker: "Trenden", headline: "Kurvorna pekar åt fel håll" },
     { kicker: "Vad det kostar", headline: "1 004 elever utan behörighet" },
-    { kicker: "Snällbetygen", headline: "Provet och betyget berättar olika saker" },
+    { kicker: "Prov mot betyg", headline: "Provet och betyget berättar olika saker" },
     // ------------------------------------------- Akt 2 · Vetenskapen ----
-    { kicker: "Vetenskapen", headline: "Matematik är en väv" },
-    { kicker: "Fundamentet", headline: "Allt vilar på taluppfattningen" },
+    { kicker: "Vetenskapen", headline: "Matematik byggs nedifrån" },
+    { kicker: "Grunden", headline: "Allt vilar på taluppfattningen" },
     { kicker: "Kedjan", headline: "Från tårtbitar i trean till räntan på första lånet" },
-    { kicker: "Experimentet", headline: "Ta bort en enda tråd" },
+    { kicker: "Experimentet", headline: "Ta bort en enda byggsten" },
     { kicker: "Forskningen", headline: "Beläggen är entydiga" },
     // ------------------------------- Akt 3 · Svårt — och nödvändigt ----
     { kicker: "Elevernas fråga", headline: "”Varför är matte så svårt?”" },
@@ -194,12 +194,12 @@
     // ---------------------------------------------- Akt 4 · Kohorten ----
     { kicker: "Vår data", headline: "Vi följde en hel årskull" },
     { kicker: "Vår data", headline: "Hålen från trean blev betygen i nian" },
-    { kicker: "Vår data", headline: "Efter sexan är loppet nästan kört" },
+    { kicker: "Vår data", headline: "Efter sexan är det brant uppför" },
     // ---------------------------------------- Akt 5 · Tidiga signaler ----
     { kicker: "Tidiga signaler", headline: "Signalen syns redan i ettan" },
-    { kicker: "Tidiga signaler", headline: "Trean pekar ut exakt var det brister" },
+    { kicker: "Tidiga signaler", headline: "Trean pekar ut var det brister" },
     // ------------------------------------------------ Akt 6 · Slutet ----
-    { kicker: "Vägen framåt", headline: "En väv går att laga" },
+    { kicker: "Vägen framåt", headline: "En grund går att laga" },
   ];
 
   const graphMode = $derived(
@@ -355,7 +355,7 @@
           <strong>{String(ov.npFHojdaTillE).replace(".", ",")}&nbsp;%</strong> ändå godkänt i
           ämnesbetyget. Läraren väger in mer än ett provtillfälle — ofta helt
           rätt. Men det betyder också att slutbetyget kan dölja luckor som
-          provet hittade. E:t på pappret lagar inte hålet i väven.
+          provet hittade. E:t på pappret fyller inte hålet i grunden.
         </p>
       {:else if i === 4}
         <p>
@@ -365,24 +365,26 @@
           upp. Varje linje betyder <em>"bygger på"</em>.
         </p>
         <p>
-          Det här är ingen trappa där man kan hoppa över ett steg och ta igen
-          det senare. Det är en väv, där varje ny tråd fäster i flera gamla.
+          Grunden läggs i ettan, och sedan byggs våning på våning — men det
+          är inget bygge man kan hoppa över ett moment i och ta igen senare.
+          Varje ny sten står på flera gamla samtidigt.
         </p>
       {:else if i === 5}
         <p>
-          Följ de blå trådarna längst ner: antal, talraden, tiokamraterna,
-          positionssystemet. Det är <strong>taluppfattningen</strong> — och i
-          princip allt annat i väven hänger, direkt eller indirekt, i de här
-          trådarna.
+          Titta längst ner i bygget: antal, talraden, tiokamraterna,
+          positionssystemet. Det är <strong>taluppfattningen</strong> —
+          grundstenarna som nästan allt annat står på, direkt eller
+          indirekt.
         </p>
         <p>
-          Av grafens 78 begrepp bygger <strong>57 vidare på</strong> addition
-          och subtraktion upp till 20 — det man lär sig i ettan. Det är därför
-          de tidiga årskurserna avgör så mycket.
+          Av grafens 78 begrepp står <strong>57 ovanpå</strong> addition
+          och subtraktion upp till 20 — det man lär sig i ettan.
+          Grundläggningen sker i lågstadiet. Det är därför de tidiga
+          årskurserna avgör så mycket.
         </p>
       {:else if i === 6}
         <p>
-          En enda tråd, följd genom hela skolgången: <em>del av helhet</em> i
+          En enda kedja, följd genom hela skolgången: <em>del av helhet</em> i
           trean blir <em>bråk</em> i fyran, <em>likvärdiga bråk</em> i femman,
           <em>procent</em> i sexan, <em>procenträkning</em> i sjuan,
           <em>förändringsfaktor</em> i åttan — och i nian står den som
@@ -409,6 +411,11 @@
         <p>
           Det här är inte en metafor vi valt för att den är vacker — det är
           ett av de mest belagda resultaten i utbildningsforskningen.
+        </p>
+        <p>
+          Tre studier, tre olika länder, samma slutsats: det tidiga avgör
+          mest, bråken är gångjärnet mellan aritmetik och algebra, och gap
+          som lämnas ifred växer av sig själva. Kumulativitet, mätt.
         </p>
       {:else if i === 9}
         <p>
@@ -440,7 +447,7 @@
         </p>
       {:else if i === 11}
         <p>
-          Om väven är verklig borde hålen synas i vår egen data — långt innan
+          Om grafen stämmer borde hålen synas i vår egen data — långt innan
           betygen sätts. Så vi följde <strong>årskullen som gick ut nian i
           våras</strong> bakåt: nationella provet i åk 3 våren 2019, åk 6 våren
           2022, åk 9 våren 2025.
@@ -469,27 +476,28 @@
         </p>
       {:else if i === 13}
         <p>
-          Och ju senare man tittar, desto mer avgjort är loppet. Av eleverna
+          Och ju senare ett hål lagas, desto tyngre blir jobbet. Av eleverna
           som hade F i matematik i sexan fick
           <strong class="rod">{String(data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9).replace(".", ",")}&nbsp;%</strong>
           F även i nian. Även av dem som precis klarade sexan med ett E föll
           mer än var femte till F.
         </p>
         <p>
-          Högstadiet reparerar alltså inte mellanstadiets hål — det bygger
-          vidare ovanpå dem. Ska väven lagas måste det ske tidigare.
+          Högstadiet reparerar alltså sällan mellanstadiets hål — det bygger
+          vidare ovanpå dem, i högre tempo och med mer abstraktion. Ska
+          grunden lagas behöver det ske tidigare, medan mindre står ovanpå.
         </p>
       {:else if i === 14}
         <p>
           Hur tidigt kan skolan se hålen? Redan <strong>första höstterminen i
           årskurs 1</strong>. Skolverkets obligatoriska bedömningsstöd i
-          taluppfattning delar in eleverna i tre nivåer — och pekar ut var
-          sjätte sexåring som i behov av stöd, innan något betyg satts.
+          taluppfattning delar in eleverna i tre nivåer — och flaggar var
+          sjätte elev för stöd, flera år innan något betyg sätts.
         </p>
         <p>
           Två saker i bilden förtjänar oro: gruppen på lägre nivå
-          <strong>växer för varje år</strong> — och det är exakt de begrepp
-          som resten av väven ska fästa i.
+          <strong>växer för varje år</strong> — och det som mäts är just de
+          grundstenar som resten av bygget ska stå på.
         </p>
       {:else if i === 15}
         <p>
@@ -500,18 +508,18 @@
           och positionssystemet.
         </p>
         <p>
-          Titta tillbaka på väven: det är precis de trådar som bråk, ekvationer
-          och funktioner ska fästa i. Var fjärde elev
+          Titta tillbaka på grafen: det är precis de stenar som bråk,
+          ekvationer och funktioner ska stå på. Var fjärde elev
           ({String(data.tidigaSignaler.npAk3MinstEtt).replace(".", ",")}&nbsp;%) missade minst
-          ett delprov — det är inte ett prov, det är en karta över var väven
-          behöver lagas. Sex år innan betyget sätts.
+          ett delprov — rätt läst är det inte bara ett prov, det är en karta
+          över var grunden behöver förstärkas. Sex år innan betyget sätts.
         </p>
       {:else if i === 16}
         <p>
           Det här är den ljusa punkten: <strong>kumulativiteten går åt båda
-          hållen</strong>. Samma väv som gör tidiga hål så dyra gör tidiga
-          lagningar löjligt lönsamma — ett lagat bråkbegrepp i fyran reparerar
-          tjugo begrepp uppåt, gratis.
+          hållen</strong>. Samma struktur som gör tidiga hål så dyra gör
+          tidiga lagningar ovanligt lönsamma — ett lagat bråkbegrepp i fyran
+          bär tjugo begrepp ovanför sig.
         </p>
         <p>
           Och forskningen visar att det fungerar: intensiv, riktad undervisning

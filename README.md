@@ -1,4 +1,4 @@
-# Hålen i väven — matematiken i grundskolan
+# Hål i grunden — matematiken i grundskolan
 
 Scrollytelling-berättelse i data om matematikresultaten i grundskolan:
 varför matematik är ett kumulativt ämne, hur tidiga kunskapshål syns i
@@ -15,7 +15,7 @@ scrollytelling med steg-kort.
   utan gymnasiebehörighet, provbetyg × ämnesbetyg ("snällbetygen").
 - **Vetenskapen** — en handkurerad begreppsgraf över Lgr22:s matematik
   (78 begrepp, 115 "bygger på"-beroenden) med scrollstyrda lägen:
-  hela väven, fundamentet, bråk→ränta-kedjan, "ta bort en tråd", samt
+  hela bygget, grundstenarna, bråk→ränta-kedjan, "ta bort en byggsten", samt
   forskningsbelägg (Duncan 2007, Siegler 2012, Aunola 2004).
 - **Elevernas frågor** — "varför är matte svårt?" (förkunskapskedjornas
   djup) och "jag ska bli undersköterska — varför algebra?"

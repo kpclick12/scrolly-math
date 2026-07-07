@@ -17,13 +17,13 @@
   const prereqLabels = $derived(concept.prereqs.map((p) => byId.get(p).label));
 </script>
 
-<section class="explore" aria-label="Utforska väven">
+<section class="explore" aria-label="Utforska bygget">
   <div class="explore-inner">
     <p class="explore-kicker">Utforska själv</p>
-    <h2>Dra i en tråd</h2>
+    <h2>Ta ut en byggsten</h2>
     <p class="explore-intro">
-      Klicka på ett begrepp i väven. Blått är vad det står på — rött är allt
-      som står på det.
+      Klicka på ett begrepp i bygget. Blått är allt det står på — rött är
+      allt som står på det.
     </p>
     <div class="explore-layout">
       <div class="explore-graph">
@@ -40,7 +40,7 @@
             {prereqLabels.join(" · ")}
           </p>
         {:else}
-          <p class="panel-row"><strong>Ett av vävens ankare</strong> — inga förkunskaper.</p>
+          <p class="panel-row"><strong>En av grundstenarna</strong> — inga förkunskaper.</p>
         {/if}
         <div class="panel-stats">
           <div>

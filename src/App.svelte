@@ -5,8 +5,8 @@
 
   const ov = data.overview;
 
-  // Bakgrundsmotiv i heron: en väv av begrepp — noder och trådar — där en
-  // handfull noder är släckta med röd ring: hålen i väven, synliga redan
+  // Bakgrundsmotiv i heron: ett bygge av begrepp — noder och beroenden — där
+  // en handfull noder är släckta med röd ring: hålen i grunden, synliga redan
   // innan berättelsen börjat.
   const MOTIF_N = 90;
   const motif = (() => {
@@ -93,15 +93,15 @@
   <div class="hero-inner">
     <p class="eyebrow">Göteborgs Stad · Grundskoleförvaltningen</p>
     <h1>
-      <span class="hero-line1">Hålen</span>
-      <span class="hero-line2">i väven</span>
+      <span class="hero-line1">Hål</span>
+      <span class="hero-line2">i grunden</span>
     </h1>
     <p class="subtitle">
       Var fjärde elev i nian klarade inte nationella provet i matematik i
       våras, och {fmt(ov.obehoriga)} lämnade grundskolan utan behörighet till
-      gymnasiet. Matematik är ett ämne där allt bygger på allt — det här är
-      berättelsen om var väven brister, hur tidigt hålen syns och varför de
-      går att laga. I data, läsåret {ov.lasar}.
+      gymnasiet. Matematik byggs nedifrån — varje nytt moment står på det
+      förra. Det här är berättelsen om var grunden brister, hur tidigt hålen
+      syns och varför de går att laga. I data, läsåret {ov.lasar}.
     </p>
     <p class="data-note">Data: syntetisk testdata (ej verkliga elevuppgifter).</p>
     <p class="scroll-hint">Scrolla<span class="scroll-tick">|</span></p>
@@ -128,7 +128,7 @@
 <section class="atgarder" aria-label="Vad kan var och en göra">
   <div class="atgarder-inner">
     <p class="atgarder-kicker">Samma data, tre uppdrag</p>
-    <h2>Vem lagar väven?</h2>
+    <h2>Vem lagar grunden?</h2>
     <div class="atgarder-grid">
       <article>
         <h3>Politiker &amp; förvaltning</h3>
@@ -167,10 +167,11 @@
       matematik.
     </h2>
     <p class="epilog-text">
-      För dem stängdes gymnasiedörren av ett enda ämne. Deras hål syntes i
-      ettans bedömningsstöd och i treans nationella prov, sex år innan betyget
-      sattes. Matematikens väv förlåter inte den som väntar — men den belönar
-      den som lagar tidigt. Varje tråd räknas.
+      För dem stängdes gymnasiedörren av ett enda ämne. Hålen syntes redan i
+      ettans bedömningsstöd och i treans nationella prov — sex år innan
+      betygen sattes. Ett hål i grunden läker inte av sig självt, och för
+      varje årskurs står mer ovanpå det. Men det går att laga. Ingenstans är
+      lagningen enklare och billigare än i början.
     </p>
   </div>
 </section>
@@ -376,7 +377,7 @@
     }
   }
 
-  /* Vem lagar väven — tre uppdrag, samma data. */
+  /* Vem lagar grunden — tre uppdrag, samma data. */
   .atgarder {
     background: var(--surface-1);
     border-top: 1px solid var(--border);

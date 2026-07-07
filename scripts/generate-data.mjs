@@ -1,4 +1,4 @@
-// Genererar syntetisk testdata för "Hålen i väven".
+// Genererar syntetisk testdata för "Hål i grunden".
 // Kör:  node scripts/generate-data.mjs
 //
 // Allt är påhittat men kalibrerat mot de verkliga storleksordningarna:
