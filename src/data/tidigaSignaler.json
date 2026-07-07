@@ -1,0 +1,54 @@
+{
+  "bedomningsstod": [
+    {
+      "termin": "HT 2023",
+      "lagre": 14.8,
+      "mellan": 24.6,
+      "hogre": 60.6
+    },
+    {
+      "termin": "HT 2024",
+      "lagre": 16.1,
+      "mellan": 24.9,
+      "hogre": 59
+    },
+    {
+      "termin": "HT 2025",
+      "lagre": 17.3,
+      "mellan": 25.4,
+      "hogre": 57.3
+    }
+  ],
+  "npAk3Delprov": [
+    {
+      "delprov": "Mönster och talföljder",
+      "andel": 24.1
+    },
+    {
+      "delprov": "Skriftliga räknemetoder",
+      "andel": 21.7
+    },
+    {
+      "delprov": "Huvudräkning",
+      "andel": 18.9
+    },
+    {
+      "delprov": "Problemlösning",
+      "andel": 17.2
+    },
+    {
+      "delprov": "Tid och proportion",
+      "andel": 14.6
+    },
+    {
+      "delprov": "Geometri och mätning",
+      "andel": 11.8
+    },
+    {
+      "delprov": "Statistik",
+      "andel": 9.4
+    }
+  ],
+  "npAk3MinstEtt": 28.7,
+  "npAk3Ar": 2025
+}

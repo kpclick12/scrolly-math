@@ -1,0 +1,54 @@
+{
+  "prov": [
+    {
+      "betyg": "F",
+      "andel": 24.5
+    },
+    {
+      "betyg": "E",
+      "andel": 26.2
+    },
+    {
+      "betyg": "D",
+      "andel": 20.4
+    },
+    {
+      "betyg": "C",
+      "andel": 15.6
+    },
+    {
+      "betyg": "B",
+      "andel": 8.6
+    },
+    {
+      "betyg": "A",
+      "andel": 4.7
+    }
+  ],
+  "amne": [
+    {
+      "betyg": "F",
+      "andel": 13.7
+    },
+    {
+      "betyg": "E",
+      "andel": 26.8
+    },
+    {
+      "betyg": "D",
+      "andel": 21.9
+    },
+    {
+      "betyg": "C",
+      "andel": 18.9
+    },
+    {
+      "betyg": "B",
+      "andel": 12.1
+    },
+    {
+      "betyg": "A",
+      "andel": 6.6
+    }
+  ]
+}

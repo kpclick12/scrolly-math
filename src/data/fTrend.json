@@ -1,0 +1,57 @@
+[
+  {
+    "ar": 2015,
+    "amnesbetygF": 10.6,
+    "provbetygF": 18
+  },
+  {
+    "ar": 2016,
+    "amnesbetygF": 10.7,
+    "provbetygF": 18.5
+  },
+  {
+    "ar": 2017,
+    "amnesbetygF": 10.8,
+    "provbetygF": 18.4
+  },
+  {
+    "ar": 2018,
+    "amnesbetygF": 11,
+    "provbetygF": 19.4
+  },
+  {
+    "ar": 2019,
+    "amnesbetygF": 11.6,
+    "provbetygF": 20.2
+  },
+  {
+    "ar": 2020,
+    "amnesbetygF": 11.9,
+    "provbetygF": null
+  },
+  {
+    "ar": 2021,
+    "amnesbetygF": 12.5,
+    "provbetygF": null
+  },
+  {
+    "ar": 2022,
+    "amnesbetygF": 12.4,
+    "provbetygF": 22.2
+  },
+  {
+    "ar": 2023,
+    "amnesbetygF": 12.6,
+    "provbetygF": 23.2
+  },
+  {
+    "ar": 2024,
+    "amnesbetygF": 13.5,
+    "provbetygF": 23.8
+  },
+  {
+    "ar": 2025,
+    "amnesbetygF": 13.7,
+    "provbetygF": 24.5
+  }
+]

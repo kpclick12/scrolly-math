@@ -1,0 +1,119 @@
+{
+  "beskrivning": "Årskullen som gick ut åk 9 våren 2025",
+  "checkpoints": [
+    {
+      "label": "Åk 3",
+      "ar": 2019,
+      "matt": "NP: under kravnivån",
+      "andel": 15.2
+    },
+    {
+      "label": "Åk 6",
+      "ar": 2022,
+      "matt": "NP: provbetyg F",
+      "andel": 18.4
+    },
+    {
+      "label": "Åk 9",
+      "ar": 2025,
+      "matt": "NP: provbetyg F",
+      "andel": 24.5
+    }
+  ],
+  "villkorade": {
+    "underAk3": {
+      "grupp": "Under kravnivån i åk 3",
+      "antal": 882,
+      "ak9": [
+        {
+          "betyg": "F",
+          "andel": 54.3
+        },
+        {
+          "betyg": "E",
+          "andel": 36.7
+        },
+        {
+          "betyg": "D",
+          "andel": 7.6
+        },
+        {
+          "betyg": "C",
+          "andel": 1.2
+        },
+        {
+          "betyg": "B",
+          "andel": 0.1
+        },
+        {
+          "betyg": "A",
+          "andel": 0
+        }
+      ]
+    },
+    "naddeAk3": {
+      "grupp": "Nådde kravnivån i åk 3",
+      "antal": 4922,
+      "ak9": [
+        {
+          "betyg": "F",
+          "andel": 6.4
+        },
+        {
+          "betyg": "E",
+          "andel": 25
+        },
+        {
+          "betyg": "D",
+          "andel": 24.5
+        },
+        {
+          "betyg": "C",
+          "andel": 22.1
+        },
+        {
+          "betyg": "B",
+          "andel": 14.3
+        },
+        {
+          "betyg": "A",
+          "andel": 7.8
+        }
+      ]
+    },
+    "fAndelUnder": 54.3,
+    "fAndelNadde": 6.4
+  },
+  "fEfterAk6": [
+    {
+      "betygAk6": "F",
+      "andelFAk9": 80.7,
+      "antal": 534
+    },
+    {
+      "betygAk6": "E",
+      "andelFAk9": 21.8,
+      "antal": 1613
+    },
+    {
+      "betygAk6": "D",
+      "andelFAk9": 1.1,
+      "antal": 1301
+    },
+    {
+      "betygAk6": "C",
+      "andelFAk9": 0,
+      "antal": 1137
+    },
+    {
+      "betygAk6": "B",
+      "andelFAk9": 0,
+      "antal": 743
+    },
+    {
+      "betygAk6": "A",
+      "andelFAk9": 0,
+      "antal": 476
+    }
+  ]
+}
