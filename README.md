@@ -19,10 +19,11 @@ scrollytelling med steg-kort.
   forskningsbelägg (Duncan 2007, Siegler 2012, Aunola 2004).
 - **Elevernas frågor & vardag** — "varför är matte svårt?"
   (förkunskapskedjornas djup), splittrat fokus + kontanternas försvinnande
-  (Riksbanken — sidans enda verkliga dataserie) och "jag ska bli
-  undersköterska — varför algebra?" med en interaktiv panel: musikens
-  kvint (bråket 3:2, animerade vågor), snickarens takstol (Pythagoras)
-  och läkemedelsberäkning.
+  (Riksbanken — sidans enda verkliga dataserie) och "varför ska jag kunna
+  matte — jag ska ju bli …?" med en interaktiv yrkesväljare: 12 drömyrken
+  som vart och ett avslöjar sin dolda matematik (kvintens 3:2-vågor,
+  takstolens Pythagoras, läkemedelsberäkning, Ohms lag, CPM …) —
+  okända okändheter, gjorda upplevbara.
 
 Stegen som visar de egna resultaten är rödmarkerade med badgen
 **"Våra resultat"** och stora sifferutrop (302 · 54 % mot 6 % · 8 av 10),

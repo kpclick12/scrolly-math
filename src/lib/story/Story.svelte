@@ -8,7 +8,7 @@
   import StackedBars from "../components/StackedBars.svelte";
   import ConceptGraph from "../components/ConceptGraph.svelte";
   import ResearchCards from "../components/ResearchCards.svelte";
-  import MattenOverallt from "../components/MattenOverallt.svelte";
+  import YrkesValjare from "../components/YrkesValjare.svelte";
 
   let { data } = $props();
 
@@ -210,7 +210,7 @@
     // ------------------------------- Akt 3 · Svårt — och nödvändigt ----
     { kicker: "Elevernas fråga", headline: "”Varför är matte så svårt?”" },
     { kicker: "Elevernas vardag", headline: "Träningen försvann, avbrotten kom" },
-    { kicker: "Elevernas fråga", headline: "”Jag ska bli undersköterska — varför algebra?”" },
+    { kicker: "Elevernas fråga", headline: "”Varför ska jag kunna matte — jag ska ju bli …?”" },
     // ---------------------------------------------- Akt 4 · Kohorten ----
     { kicker: "Kohorten 2019–2025", headline: "Vi följde en hel årskull", typ: "data" },
     { kicker: "Kohorten 2019–2025", headline: "Hålen från trean blev betygen i nian", typ: "data" },
@@ -290,7 +290,7 @@
               note="Verklig statistik: Riksbankens betalningsundersökningar 2010–2022."
             />
           {:else if currentStep === 10}
-            <MattenOverallt />
+            <YrkesValjare />
           {:else if currentStep === 11}
             <LineChart
               series={kohortSeries}
@@ -474,16 +474,20 @@
         </p>
       {:else if i === 10}
         <p>
-          Frågan är ärlig och förtjänar ett ärligt svar. Det första är krasst:
-          <strong>utan godkänt i matematik öppnas inte yrkesprogrammen alls</strong>
-          — vård- och omsorgsprogrammet kräver samma behörighet som alla andra.
+          Fyll i vad som helst — svaret blir detsamma. En femtonåring som
+          väljer bort matten fattar ett beslut om en framtid hen ännu inte
+          kan se. Det är feltänkets kärna: <strong>man vet inte vilka dörrar
+          man stänger, för man har inte hunnit upptäcka att de
+          finns</strong>. Undersköterskan visste inte att jobbet innehåller
+          läkemedelsberäkning. Elektrikern visste inte att Ohms lag är
+          algebra. Förrän de stod där.
         </p>
         <p>
-          Det andra svaret är bättre: matematiken är inte ett hinder på vägen
-          till jobbet — den <em>är</em> jobbet, oftare än man tror. Välj värld
-          i panelen: musikens harmonier är bråk, snickarens takstol är
-          Pythagoras, och undersköterskans läkemedelsberäkning är
-          proportionalitet med ett barns hälsa som insats.
+          Prova själv i panelen: välj ett drömyrke och se vilken matte som
+          gömmer sig i det. Poängen är inte något enskilt exempel — det är
+          att <strong>ingen i nian vet vilken av dörrarna hen själv kommer
+          vilja öppna om fem år</strong>. Det enda sättet att hålla alla
+          öppna är att grunden följer med.
         </p>
       {:else if i === 11}
         <p>
