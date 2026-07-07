@@ -8,7 +8,6 @@
   import StackedBars from "../components/StackedBars.svelte";
   import ConceptGraph from "../components/ConceptGraph.svelte";
   import ResearchCards from "../components/ResearchCards.svelte";
-  import FokusRemsa from "../components/FokusRemsa.svelte";
   import MattenOverallt from "../components/MattenOverallt.svelte";
 
   let { data } = $props();
@@ -196,30 +195,29 @@
     },
   ];
 
+  // typ: "data" = våra resultat (röd markering + badge), annars bakgrund.
   const steps = [
     // ------------------------------------------------ Akt 1 · Läget ----
-    { kicker: "Läget", headline: "Var fjärde klarar inte provet" },
-    { kicker: "Trenden", headline: "Kurvorna pekar åt fel håll" },
-    { kicker: "Vad det kostar", headline: "1 004 elever utan behörighet" },
-    { kicker: "Prov mot betyg", headline: "Provet och betyget berättar olika saker" },
+    { kicker: "Läget", headline: "Var fjärde klarar inte provet", typ: "data" },
+    { kicker: "Trenden", headline: "Kurvorna pekar åt fel håll", typ: "data" },
+    { kicker: "Vad det kostar", headline: "1 004 elever utan behörighet", typ: "data" },
+    { kicker: "Prov mot betyg", headline: "Provet och betyget berättar olika saker", typ: "data" },
     // ------------------------------------------- Akt 2 · Vetenskapen ----
     { kicker: "Vetenskapen", headline: "Matematik byggs nedifrån" },
-    { kicker: "Grunden", headline: "Allt vilar på taluppfattningen" },
     { kicker: "Kedjan", headline: "Från tårtbitar i trean till räntan på första lånet" },
     { kicker: "Experimentet", headline: "Ta bort en enda byggsten" },
     { kicker: "Forskningen", headline: "Beläggen är entydiga" },
     // ------------------------------- Akt 3 · Svårt — och nödvändigt ----
     { kicker: "Elevernas fråga", headline: "”Varför är matte så svårt?”" },
-    { kicker: "Elevernas vardag", headline: "Kortare fokus möter långa kedjor" },
-    { kicker: "Elevernas vardag", headline: "Räknandet försvann ur vardagen" },
+    { kicker: "Elevernas vardag", headline: "Träningen försvann, avbrotten kom" },
     { kicker: "Elevernas fråga", headline: "”Jag ska bli undersköterska — varför algebra?”" },
     // ---------------------------------------------- Akt 4 · Kohorten ----
-    { kicker: "Vår data", headline: "Vi följde en hel årskull" },
-    { kicker: "Vår data", headline: "Hålen från trean blev betygen i nian" },
-    { kicker: "Vår data", headline: "Efter sexan är det brant uppför" },
+    { kicker: "Kohorten 2019–2025", headline: "Vi följde en hel årskull", typ: "data" },
+    { kicker: "Kohorten 2019–2025", headline: "Hålen från trean blev betygen i nian", typ: "data" },
+    { kicker: "Kohorten 2019–2025", headline: "Efter sexan är det brant uppför", typ: "data" },
     // ---------------------------------------- Akt 5 · Tidiga signaler ----
-    { kicker: "Tidiga signaler", headline: "Signalen syns redan i ettan" },
-    { kicker: "Tidiga signaler", headline: "Trean pekar ut var det brister" },
+    { kicker: "Tidiga signaler", headline: "Signalen syns redan i ettan", typ: "data" },
+    { kicker: "Tidiga signaler", headline: "Trean pekar ut var det brister", typ: "data" },
     // ------------------------------------------------ Akt 6 · Slutet ----
     { kicker: "Vägen framåt", headline: "En grund går att laga" },
   ];
@@ -228,16 +226,14 @@
     currentStep === 4
       ? "all"
       : currentStep === 5
-        ? "foundation"
+        ? "chain"
         : currentStep === 6
-          ? "chain"
-          : currentStep === 7
-            ? "missing"
-            : currentStep === 9
-              ? "depth"
-              : currentStep === 18
-                ? "all"
-                : null
+          ? "missing"
+          : currentStep === 8
+            ? "depth"
+            : currentStep === 16
+              ? "all"
+              : null
   );
 </script>
 
@@ -283,11 +279,9 @@
               showValues={true}
               highlight={["F__E", "F__D"]}
             />
-          {:else if currentStep === 8}
+          {:else if currentStep === 7}
             <ResearchCards cards={forskningskort} />
-          {:else if currentStep === 10}
-            <FokusRemsa />
-          {:else if currentStep === 11}
+          {:else if currentStep === 9}
             <LineChart
               series={kontantSerie}
               unit="%"
@@ -295,34 +289,34 @@
               title="Andel som betalade sitt senaste köp i butik med kontanter (Riksbanken)"
               note="Verklig statistik: Riksbankens betalningsundersökningar 2010–2022."
             />
-          {:else if currentStep === 12}
+          {:else if currentStep === 10}
             <MattenOverallt />
-          {:else if currentStep === 13}
+          {:else if currentStep === 11}
             <LineChart
               series={kohortSeries}
               unit="%"
               labelAll={true}
               title="Samma årskull vid tre kontrollstationer: andel under kravnivån/med F på nationella provet"
             />
-          {:else if currentStep === 14}
+          {:else if currentStep === 12}
             <StackedBars
               rows={villkoradeRows}
               legend={betygLegend}
               title="Ämnesbetyg i matematik åk 9 (våren 2025), efter resultat på nationella provet i åk 3 (2019)"
             />
-          {:else if currentStep === 15}
+          {:else if currentStep === 13}
             <BarChart
               data={fEfterAk6Bars}
               title="Andel som fick F i åk 9, efter ämnesbetyg i åk 6 — samma årskull"
               maxValue={100}
             />
-          {:else if currentStep === 16}
+          {:else if currentStep === 14}
             <StackedBars
               rows={bedomningsRows}
               legend={bedomningsLegend}
               title="Bedömningsstödet i taluppfattning, hösten åk 1 — andel elever per nivå"
             />
-          {:else if currentStep === 17}
+          {:else if currentStep === 15}
             <BarChart
               data={delprovBars}
               title="Nationella provet åk 3 (våren 2025): andel elever som inte nådde kravnivån, per delprov"
@@ -335,8 +329,11 @@
   {/snippet}
 
   {#each steps as step, i}
-    <section class="scrolly-step" data-index={i}>
-      <p class="kicker">{step.kicker}</p>
+    <section class="scrolly-step" class:is-data={step.typ === "data"} data-index={i}>
+      <p class="kicker">
+        {#if step.typ === "data"}<span class="typ-badge">Våra resultat</span>{/if}
+        {step.kicker}
+      </p>
       <h2>{step.headline}</h2>
       {#if i === 0}
         <p>
@@ -370,11 +367,14 @@
         </p>
         <p>
           <strong>{ov.obehorigaMedFMatte}</strong> av dem — åtta av tio — saknar
-          godkänt i just matematik. Och
-          <strong class="rod">{ov.obehorigaEndastMatte} elever föll på matematiken
-          ensam</strong>: godkänt i allt annat, men dörren till gymnasiet stängd
-          på grund av ett enda ämne.
+          godkänt i just matematik. Och för en grupp var matten det enda som
+          fattades: godkänt i allt annat, men dörren till gymnasiet stängd av
+          ett enda ämne.
         </p>
+        <div class="callout">
+          <span class="callout-num">{ov.obehorigaEndastMatte}</span>
+          <span class="callout-label">elever föll på matematiken ensam</span>
+        </div>
       {:else if i === 3}
         <p>
           Minns gapet mellan kurvorna? Här är det, elev för elev. Rutnätet visar
@@ -397,24 +397,14 @@
           upp. Varje linje betyder <em>"bygger på"</em>.
         </p>
         <p>
-          Grunden läggs i ettan, och sedan byggs våning på våning — men det
-          är inget bygge man kan hoppa över ett moment i och ta igen senare.
+          Titta längst ner: antal, talraden, tiokamraterna — det är
+          <strong>taluppfattningen</strong>, och av grafens 78 begrepp står
+          <strong>57 ovanpå</strong> ettans addition och subtraktion.
+          Grunden läggs i lågstadiet, våningarna byggs uppåt — och det är
+          inget bygge man kan hoppa över ett moment i och ta igen senare.
           Varje ny sten står på flera gamla samtidigt.
         </p>
       {:else if i === 5}
-        <p>
-          Titta längst ner i bygget: antal, talraden, tiokamraterna,
-          positionssystemet. Det är <strong>taluppfattningen</strong> —
-          grundstenarna som nästan allt annat står på, direkt eller
-          indirekt.
-        </p>
-        <p>
-          Av grafens 78 begrepp står <strong>57 ovanpå</strong> addition
-          och subtraktion upp till 20 — det man lär sig i ettan.
-          Grundläggningen sker i lågstadiet. Det är därför de tidiga
-          årskurserna avgör så mycket.
-        </p>
-      {:else if i === 6}
         <p>
           En enda kedja, följd genom hela skolgången: <em>del av helhet</em> i
           trean blir <em>bråk</em> i fyran, <em>likvärdiga bråk</em> i femman,
@@ -426,7 +416,7 @@
           Tårtbitarna i trean och räntan på första bostadslånet är samma
           kunskap, åtta år senare.
         </p>
-      {:else if i === 7}
+      {:else if i === 6}
         <p>
           Så vad händer om en elev är borta, okoncentrerad eller utan stöd de
           veckor i fyran när <strong>bråkbegreppet</strong> gås igenom — och
@@ -439,7 +429,7 @@
           lektion och förstår mindre och mindre, utan att någon ser var det
           egentligen brast.
         </p>
-      {:else if i === 8}
+      {:else if i === 7}
         <p>
           Det här är inte en metafor vi valt för att den är vacker — det är
           ett av de mest belagda resultaten i utbildningsforskningen.
@@ -449,7 +439,7 @@
           mest, bråken är gångjärnet mellan aritmetik och algebra, och gap
           som lämnas ifred växer av sig själva. Kumulativitet, mätt.
         </p>
-      {:else if i === 9}
+      {:else if i === 8}
         <p>
           Grafen förklarar också något varje lärare hört tusen gånger:
           <em>"jag fattar ingenting, matte är svårt"</em>. I många ämnen kan
@@ -464,37 +454,25 @@
           <strong>"jag saknar ett begrepp från tre årskurser sedan"</strong>.
           Svårt är inte samma sak som obegåvad. Det är oftast bara olagat.
         </p>
+      {:else if i === 9}
+        <p>
+          Två saker i elevernas vardag har samtidigt gjort kedjorna svårare
+          att bygga. Den ena är <strong>fokus</strong>: ett resonemang i åtta
+          steg måste hållas ihop i arbetsminnet från början till slut — bryts
+          tråden vid steg tre finns inget att fästa steg fyra i. Ett ämne som
+          byggs i kedjor drabbas hårdare av splittrad uppmärksamhet än något
+          annat.
+        </p>
+        <p>
+          Den andra är att <strong>vardagens gratis matteträning
+          försvann</strong>. En generation tränade taluppfattning dagligen
+          utan att kalla det matte — växel på hundralappen, veckopeng i mynt.
+          Kurvan här intill är verklig statistik: på tolv år föll
+          kontantköpen från 39 till 8 procent. Talen barn möter är siffror på
+          en skärm, inte mängder i handen — klassrummet måste numera stå för
+          nästan hela träningen.
+        </p>
       {:else if i === 10}
-        <p>
-          Kedjorna möter dessutom en ny motståndare. Lärare beskriver samma
-          sak över hela landet: det blir svårare för många elever att hålla
-          <strong>sammanhängande fokus</strong> — uppmärksamheten är tränad i
-          flödenas och notisernas tempo.
-        </p>
-        <p>
-          I de flesta ämnen kostar det minuter. I matematik kostar det
-          förståelse. En ekvationslösning i åtta steg måste hållas ihop i
-          arbetsminnet från början till slut — bryts tråden vid steg tre
-          finns inget att fästa steg fyra i, och man börjar om. Ett ämne som
-          byggs i kedjor drabbas hårdare av splittrat fokus än något annat:
-          <strong>samma avbrott, större skada</strong>.
-        </p>
-      {:else if i === 11}
-        <p>
-          Samtidigt försvann vardagens gratis matteträning. En generation
-          tränade taluppfattning varje dag utan att kalla det matte: växel på
-          hundralappen, veckopeng i mynt, "hur mycket har jag kvar?". Sedan
-          slutade vi använda kontanter — kurvan här intill är
-          <strong>verklig statistik</strong>, inte testdata.
-        </p>
-        <p>
-          För barnen betyder det att tal allt mer är siffror på en skärm, inte
-          mängder i handen. Grunden som skolan ska lägga i åk 1–3 var förr en
-          förlängning av vardagen. Idag måste klassrummet stå för nästan hela
-          träningen — samtidigt som bedömningsstödet visar att gruppen som
-          behöver den växer.
-        </p>
-      {:else if i === 12}
         <p>
           Frågan är ärlig och förtjänar ett ärligt svar. Det första är krasst:
           <strong>utan godkänt i matematik öppnas inte yrkesprogrammen alls</strong>
@@ -507,7 +485,7 @@
           Pythagoras, och undersköterskans läkemedelsberäkning är
           proportionalitet med ett barns hälsa som insats.
         </p>
-      {:else if i === 13}
+      {:else if i === 11}
         <p>
           Om grafen stämmer borde hålen synas i vår egen data — långt innan
           betygen sätts. Så vi följde <strong>årskullen som gick ut nian i
@@ -522,34 +500,39 @@
           Gapet stängs inte av sig självt. Det växer — precis som
           Matteuseffekten säger.
         </p>
-      {:else if i === 14}
+      {:else if i === 12}
         <p>
           Men det starkaste beviset är att följa <strong>samma barn</strong>.
           Dela årskullen i två grupper efter ett enda mått: klarade de
           kravnivån på nationella provet i trean — som nioåringar?
         </p>
+        <div class="callout">
+          <span class="callout-num">{Math.round(villkorade.fAndelUnder)}&nbsp;%</span>
+          <span class="callout-label">av dem som missade trean fick F i nian —
+            mot <strong>{Math.round(villkorade.fAndelNadde)}&nbsp;%</strong> av dem som klarade den</span>
+        </div>
         <p>
-          Sex år senare har <strong class="rod">{String(villkorade.fAndelUnder).replace(".", ",")}&nbsp;%</strong>
-          av dem som inte gjorde det fått F i nian. I gruppen som klarade trean
-          är det {String(villkorade.fAndelNadde).replace(".", ",")}&nbsp;%.
           <strong>Ett prov i årskurs tre förutsäger slutbetyget nästan ett
           decennium i förväg.</strong> Hålen försvann inte. De växte in i
           betygskatalogen.
         </p>
-      {:else if i === 15}
+      {:else if i === 13}
         <p>
-          Och ju senare ett hål lagas, desto tyngre blir jobbet. Av eleverna
-          som hade F i matematik i sexan fick
-          <strong class="rod">{String(data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9).replace(".", ",")}&nbsp;%</strong>
-          F även i nian. Även av dem som precis klarade sexan med ett E föll
-          mer än var femte till F.
+          Och ju senare ett hål lagas, desto tyngre blir jobbet. Även av dem
+          som precis klarade sexan med ett E föll mer än var femte till F i
+          nian.
         </p>
+        <div class="callout">
+          <span class="callout-num">8&nbsp;av&nbsp;10</span>
+          <span class="callout-label">med F i sexan fick F även i nian
+            ({String(data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9).replace(".", ",")}&nbsp;%)</span>
+        </div>
         <p>
           Högstadiet reparerar alltså sällan mellanstadiets hål — det bygger
           vidare ovanpå dem, i högre tempo och med mer abstraktion. Ska
           grunden lagas behöver det ske tidigare, medan mindre står ovanpå.
         </p>
-      {:else if i === 16}
+      {:else if i === 14}
         <p>
           Hur tidigt kan skolan se hålen? Redan <strong>första höstterminen i
           årskurs 1</strong>. Skolverkets obligatoriska bedömningsstöd i
@@ -561,7 +544,7 @@
           <strong>växer för varje år</strong> — och det som mäts är just de
           grundstenar som resten av bygget ska stå på.
         </p>
-      {:else if i === 17}
+      {:else if i === 15}
         <p>
           Nationella provet i trean visar inte bara <em>vilka</em> elever som
           behöver hjälp — det visar <em>med vad</em>. I våras föll flest på
@@ -576,7 +559,7 @@
           ett delprov — rätt läst är det inte bara ett prov, det är en karta
           över var grunden behöver förstärkas. Sex år innan betyget sätts.
         </p>
-      {:else if i === 18}
+      {:else if i === 16}
         <p>
           Det här är den ljusa punkten: <strong>kumulativiteten går åt båda
           hållen</strong>. Samma struktur som gör tidiga hål så dyra gör
@@ -622,6 +605,23 @@
     padding: 28px 32px;
     box-shadow: 0 2px 10px rgba(22, 40, 58, 0.08);
   }
+  /* Stegen som visar våra egna resultat — berättelsens ryggrad — markeras
+     rött; bakgrunds- och forskningssteg behåller marinblått. */
+  :global(.scrolly-step.is-data) {
+    border-left-color: var(--series-red);
+  }
+  .typ-badge {
+    display: inline-block;
+    background: var(--series-red);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 8px;
+    transform: translateY(-1px);
+  }
   :global(.scrolly-step > *) {
     opacity: 0.35;
     transition: opacity 0.3s ease;
@@ -653,5 +653,29 @@
   }
   .rod {
     color: var(--series-red);
+  }
+  /* Utropssiffran — nyckeltalen ska inte kunna gömma sig i brödtexten. */
+  .callout {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 14px 0 12px;
+    padding: 12px 16px;
+    background: var(--page-plane);
+    border-radius: 6px;
+  }
+  .callout-num {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--series-red);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .callout-label {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-secondary);
   }
 </style>

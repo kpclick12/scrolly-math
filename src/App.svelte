@@ -223,8 +223,7 @@
         butik med kontanter, 2010–2022 (avrundade värden).
       </li>
       <li>
-        Avsnitten om fokus och vardagsräknande är resonemang och illustration,
-        inte mätdata — fokusremsan visar arbetsminnets villkor i princip.
+        Avsnittet om fokus och vardagsräknande är resonemang, inte mätdata.
       </li>
     </ul>
   </div>

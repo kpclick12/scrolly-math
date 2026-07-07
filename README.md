@@ -18,11 +18,15 @@ scrollytelling med steg-kort.
   hela bygget, grundstenarna, bråk→ränta-kedjan, "ta bort en byggsten", samt
   forskningsbelägg (Duncan 2007, Siegler 2012, Aunola 2004).
 - **Elevernas frågor & vardag** — "varför är matte svårt?"
-  (förkunskapskedjornas djup), splittrat fokus mot långa kedjor,
-  kontanternas försvinnande (Riksbanken — sidans enda verkliga dataserie)
-  och "jag ska bli undersköterska — varför algebra?" med en interaktiv
-  panel: musikens kvint (bråket 3:2, animerade vågor), snickarens takstol
-  (Pythagoras) och läkemedelsberäkning.
+  (förkunskapskedjornas djup), splittrat fokus + kontanternas försvinnande
+  (Riksbanken — sidans enda verkliga dataserie) och "jag ska bli
+  undersköterska — varför algebra?" med en interaktiv panel: musikens
+  kvint (bråket 3:2, animerade vågor), snickarens takstol (Pythagoras)
+  och läkemedelsberäkning.
+
+Stegen som visar de egna resultaten är rödmarkerade med badgen
+**"Våra resultat"** och stora sifferutrop (302 · 54 % mot 6 % · 8 av 10),
+så att kärnbudskapet inte drunknar i bakgrunden.
 - **Vår data** — en årskull följd från NP åk 3 (2019) till slutbetyg åk 9
   (2025), villkorade utfall och betygströghet efter åk 6.
 - **Tidiga signaler** — bedömningsstödet i taluppfattning åk 1 och NP åk 3
