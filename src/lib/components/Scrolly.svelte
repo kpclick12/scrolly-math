@@ -82,6 +82,14 @@
     gap: 60svh;
     padding-top: 30svh;
     padding-bottom: 60svh;
+    /* Kolumnen ligger ovanpå den stickiga panelen (särskilt på mobil, där
+       korten glider över den). Utan detta äter de tomma ytorna mellan korten
+       alla klick — flikar och grafnoder går inte att träffa. Släpp igenom
+       pekaren i containern, men behåll den i själva korten. */
+    pointer-events: none;
+  }
+  .scrolly-steps > :global(*) {
+    pointer-events: auto;
   }
   @media (max-width: 860px) {
     .scrolly {
