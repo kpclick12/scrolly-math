@@ -216,14 +216,25 @@
         vad som orsakar vad — men de är konstruerade för att likna de mönster
         forskningen ovan beskriver.
       </li>
+      <li>
+        Kontantstatistiken är sidans enda verkliga dataserie:
+        <a href="https://www.riksbank.se/sv/betalningar--kontanter/sa-betalar-svenskarna/" target="_blank" rel="noopener noreferrer">Riksbankens
+        betalningsundersökningar</a> — andel som betalade sitt senaste köp i
+        butik med kontanter, 2010–2022 (avrundade värden).
+      </li>
+      <li>
+        Avsnitten om fokus och vardagsräknande är resonemang och illustration,
+        inte mätdata — fokusremsan visar arbetsminnets villkor i princip.
+      </li>
     </ul>
   </div>
 </section>
 
 <footer>
   <p>
-    Datan på den här sidan är syntetisk testdata, genererad för att illustrera
-    koncept och layout — inte verkliga elevuppgifter.
+    Resultatdatan på den här sidan är syntetisk testdata, genererad för att
+    illustrera koncept och layout — inte verkliga elevuppgifter. Undantaget
+    är Riksbankens kontantstatistik, som är verklig.
   </p>
 </footer>
 
