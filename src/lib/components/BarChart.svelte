@@ -37,7 +37,7 @@
             ></div>
           </div>
           <span class="value" class:revealed style="transition-delay: {i * 45 + 250}ms">
-            {d.value.toFixed(1)}{unit}
+            {d.value.toFixed(1).replace(".", ",")}{unit}
           </span>
         </div>
       </div>

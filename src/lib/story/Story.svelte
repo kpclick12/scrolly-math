@@ -471,7 +471,7 @@
         <p>
           Och ju senare man tittar, desto mer avgjort är loppet. Av eleverna
           som hade F i matematik i sexan fick
-          <strong class="rod">{data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9}&nbsp;%</strong>
+          <strong class="rod">{String(data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9).replace(".", ",")}&nbsp;%</strong>
           F även i nian. Även av dem som precis klarade sexan med ett E föll
           mer än var femte till F.
         </p>
