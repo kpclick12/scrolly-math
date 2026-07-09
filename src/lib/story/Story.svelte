@@ -9,6 +9,7 @@
   import ConceptGraph from "../components/ConceptGraph.svelte";
   import ResearchCards from "../components/ResearchCards.svelte";
   import YrkesValjare from "../components/YrkesValjare.svelte";
+  import KlossTorn from "../components/KlossTorn.svelte";
 
   let { data } = $props();
 
@@ -229,11 +230,9 @@
         ? "chain"
         : currentStep === 6
           ? "missing"
-          : currentStep === 8
-            ? "depth"
-            : currentStep === 16
-              ? "all"
-              : null
+          : currentStep === 16
+            ? "all"
+            : null
   );
 </script>
 
@@ -281,6 +280,8 @@
             />
           {:else if currentStep === 7}
             <ResearchCards cards={forskningskort} />
+          {:else if currentStep === 8}
+            <KlossTorn />
           {:else if currentStep === 9}
             <LineChart
               series={kontantSerie}
@@ -442,15 +443,17 @@
       {:else if i === 8}
         <p>
           Grafen förklarar också något varje lärare hört tusen gånger:
-          <em>"jag fattar ingenting, matte är svårt"</em>. I många ämnen kan
-          den som halkat efter börja om — ett nytt kapitel i historia kräver
-          inte förra kapitlet. I matematik står varje nytt moment överst på en
-          kedja av förkunskaper, här upp till <strong>tolv steg lång</strong>.
+          <em>"jag fattar ingenting, matte är svårt"</em>. Se på de två
+          tornen: <strong>samma klossar, i samma ordning</strong>. Till
+          vänster blir raderna klara och försvinner — det är ett moment som
+          automatiserats, och arbetsminnet är fritt för nästa. Till höger
+          lämnades ett enda hål i fyran.
         </p>
         <p>
-          Mörkare färg = längre kedja. Den som bär på ett hål långt ner möter
-          allt mörkare moment med samma hål under fötterna — och det som känns
-          som <em>"jag är dålig på matte"</em> är oftast
+          Raderna ovanför hålet blir aldrig klara. Golvet stiger, varje ny
+          kloss landar snett, och spelaren jobbar hårdare för sämre resultat
+          — <strong>fast bitarna är exakt desamma</strong>. Det som känns som
+          <em>"jag är dålig på matte"</em> är oftast
           <strong>"jag saknar ett begrepp från tre årskurser sedan"</strong>.
           Svårt är inte samma sak som obegåvad. Det är oftast bara olagat.
         </p>
