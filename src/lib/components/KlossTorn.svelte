@@ -30,11 +30,13 @@
     };
 
     snap();
+    let pieceNr = 0;
     for (const [w, c] of drops) {
       const y = Math.max(...heights.slice(c, c + w));
+      const nr = pieceNr++;
       const nya = [];
       for (let x = c; x < c + w; x++) {
-        nya.push({ x, y, p: cells.length });
+        nya.push({ x, y, p: nr });
         heights[x] = y + 1;
       }
       cells = cells.concat(nya.map((n) => ({ x: n.x, y: n.y, p: n.p })));
@@ -65,7 +67,16 @@
   const GAP = 2;
   const BW = W * CELL;
   const BH = ROWS * CELL;
-  const FARGER = ["#649ecf", "#2d7fbe", "#0068b2", "#9cc0dd"];
+  // Samma färgspråk som begreppsgrafen: klossarna är moment ur kursplanens
+  // områden. Problemlösningens röda utgår här — rött är reserverat för hålen.
+  const OMRADEN = [
+    { farg: "var(--series-blue)", label: "Taluppfattning & tal" },
+    { farg: "var(--series-violet)", label: "Algebra" },
+    { farg: "var(--series-green)", label: "Geometri" },
+    { farg: "var(--series-yellow)", label: "Sannolikhet & statistik" },
+    { farg: "var(--series-magenta)", label: "Samband & förändring" },
+  ];
+  const FARGER = OMRADEN.map((o) => o.farg);
 </script>
 
 <script>
@@ -126,9 +137,16 @@
       </div>
     {/each}
   </div>
+  <div class="legend">
+    {#each OMRADEN as o}
+      <span class="legend-item"><span class="swatch" style="background:{o.farg}"></span>{o.label}</span>
+    {/each}
+    <span class="legend-item"><span class="swatch swatch-hal"></span>hål — missat moment</span>
+  </div>
   <p class="note">
-    Hålet går inte att fylla i efterhand utan att lyfta bort allt ovanpå —
-    och ju högre tornet blir, desto dyrare blir det. Illustration, inte spel.
+    Klossarna är moment ur kursplanens områden — samma färger som i
+    begreppsgrafen. Hålet går inte att fylla i efterhand utan att lyfta bort
+    allt ovanpå. Illustration, inte spel.
   </p>
 </figure>
 
@@ -209,8 +227,31 @@
     color: var(--text-muted);
     margin: 0;
   }
-  .note {
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 14px;
     margin-top: 14px;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    color: var(--text-secondary);
+  }
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .swatch-hal {
+    background: transparent;
+    outline: 1.8px dashed var(--series-red);
+    outline-offset: -1px;
+  }
+  .note {
+    margin-top: 10px;
     font-size: 12px;
     color: var(--text-muted);
   }
