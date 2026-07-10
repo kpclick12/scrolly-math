@@ -338,196 +338,202 @@
       <h2>{step.headline}</h2>
       {#if i === 0}
         <p>
-          I våras skrev {ov.arskull.toLocaleString("sv-SE")} niondeklassare det
-          nationella provet i matematik. <strong>{String(ov.npAndelAE).replace(".", ",")}&nbsp;%</strong>
-          fick A–E. Resten — nästan <strong>var fjärde elev</strong> — klarade
-          inte godkänt-gränsen.
+          I våras skrev {ov.arskull.toLocaleString("sv-SE")} elever i årskurs 9
+          det nationella provet i matematik.
+          <strong>{String(ov.npAndelAE).replace(".", ",")}&nbsp;%</strong> fick
+          provbetyget A–E. Nästan <strong>var fjärde elev</strong> nådde
+          alltså inte godkänd nivå.
         </p>
         <p>
-          Inget annat ämne är i närheten. Matematiken är där grundskolans
-          resultatkris syns först, tydligast och kostar mest.
+          Inget annat ämne ligger i närheten av de nivåerna. Matematiken är
+          det ämne där flest elever inte når målen, och där konsekvenserna
+          för den enskilda eleven blir störst.
         </p>
       {:else if i === 1}
         <p>
-          Och det är inte ett enskilt dåligt år. Andelen elever som lämnar
-          nian med <strong>F i ämnesbetyget</strong> har stigit i tio år, och
-          andelen som fälls på <strong>nationella provet</strong> ligger ännu
-          högre — gapet mellan kurvorna har dessutom växt.
+          Resultatet är inte en tillfällighet för ett enskilt år. Andelen
+          elever som lämnar årskurs 9 med <strong>F i ämnesbetyget</strong>
+          har ökat under tio års tid, och andelen som inte klarar det
+          <strong>nationella provet</strong> är ännu högre. Skillnaden mellan
+          de två kurvorna har dessutom blivit större.
         </p>
         <p>
-          Håll kvar blicken på det gapet. Vi kommer tillbaka till det om ett
-          ögonblick.
+          Vad den skillnaden består i återkommer vi till längre ner.
         </p>
       {:else if i === 2}
         <p>
-          Vad kostar kurvorna i människor? Behörighet till gymnasiets
-          yrkesprogram kräver godkänt i svenska, engelska, matematik och fem
-          ämnen till. I våras saknade
+          Bakom kurvorna finns enskilda elever. För behörighet till gymnasiets
+          yrkesprogram krävs godkänt betyg i svenska, engelska och matematik
+          samt i minst fem andra ämnen. I våras saknade
           <strong>{ov.obehoriga.toLocaleString("sv-SE")} elever</strong> den
           behörigheten.
         </p>
         <p>
-          <strong>{ov.obehorigaMedFMatte}</strong> av dem — åtta av tio — saknar
-          godkänt i just matematik. Och för en grupp var matten det enda som
-          fattades: godkänt i allt annat, men dörren till gymnasiet stängd av
-          ett enda ämne.
+          <strong>{ov.obehorigaMedFMatte}</strong> av dem, ungefär åtta av
+          tio, saknade godkänt betyg i just matematik. För en mindre grupp
+          var matematiken det enda ämne som fattades: de hade godkänt i allt
+          annat.
         </p>
         <div class="callout">
           <span class="callout-num">{ov.obehorigaEndastMatte}</span>
-          <span class="callout-label">elever föll på matematiken ensam</span>
+          <span class="callout-label">elever saknade behörighet enbart på grund av matematiken</span>
         </div>
       {:else if i === 3}
         <p>
-          Minns gapet mellan kurvorna? Här är det, elev för elev. Rutnätet visar
-          varje kombination av provbetyg och slutbetyg. De flesta ligger på
-          diagonalen — provet och betyget säger samma sak.
+          Diagrammet visar samma elever fördelade efter både provbetyg och
+          slutbetyg. De flesta ligger på diagonalen, där provet och betyget
+          ger samma bild.
         </p>
         <p>
-          Men titta på de markerade rutorna: av eleverna som fick
+          De markerade rutorna visar något annat: av eleverna som fick
           <strong>F på provet</strong> fick
-          <strong>{String(ov.npFHojdaTillE).replace(".", ",")}&nbsp;%</strong> ändå godkänt i
-          ämnesbetyget. Läraren väger in mer än ett provtillfälle — ofta helt
-          rätt. Men det betyder också att slutbetyget kan dölja luckor som
-          provet hittade. E:t på pappret fyller inte hålet i grunden.
+          <strong>{String(ov.npFHojdaTillE).replace(".", ",")}&nbsp;%</strong> ändå godkänt
+          slutbetyg. Läraren ska väga in mer underlag än ett enskilt
+          provtillfälle, och det är ofta rimligt. Men det innebär också att
+          slutbetyget kan dölja kunskapsluckor som provet visar. Ett godkänt
+          betyg fyller inte luckan i sig.
         </p>
       {:else if i === 4}
         <p>
-          För att förstå varför luckorna är så farliga i just matematik måste
-          man se ämnet som det ser ut inifrån. Här är grundskolans matematik —
-          <strong>78 begrepp från åk 1 till åk 9</strong>, ordnade nedifrån och
-          upp. Varje linje betyder <em>"bygger på"</em>.
+          För att förstå varför luckor får så stora följder i just matematik
+          behöver man se hur ämnet är uppbyggt. Bilden visar grundskolans
+          matematik som <strong>78 begrepp från årskurs 1 till 9</strong>,
+          ordnade nedifrån och upp. Varje linje betyder <em>"bygger på"</em>.
         </p>
         <p>
-          Titta längst ner: antal, talraden, tiokamraterna — det är
-          <strong>taluppfattningen</strong>, och av grafens 78 begrepp står
-          <strong>57 ovanpå</strong> ettans addition och subtraktion.
-          Grunden läggs i lågstadiet, våningarna byggs uppåt — och det är
-          inget bygge man kan hoppa över ett moment i och ta igen senare.
-          Varje ny sten står på flera gamla samtidigt.
+          Längst ner finns antal, talraden och tiokamraterna, det som kallas
+          <strong>taluppfattning</strong>. <strong>57 av grafens 78
+          begrepp</strong> bygger, direkt eller indirekt, på den addition och
+          subtraktion som lärs in i årskurs 1. Grunden läggs i lågstadiet,
+          och varje senare moment förutsätter att flera tidigare finns på
+          plats.
         </p>
       {:else if i === 5}
         <p>
-          En enda kedja, följd genom hela skolgången: <em>del av helhet</em> i
-          trean blir <em>bråk</em> i fyran, <em>likvärdiga bråk</em> i femman,
-          <em>procent</em> i sexan, <em>procenträkning</em> i sjuan,
-          <em>förändringsfaktor</em> i åttan — och i nian står den som
-          <strong>ränta, lån och privatekonomi</strong>.
+          Bilden följer en enda kedja genom skolgången: <em>del av helhet</em>
+          i årskurs 3 blir <em>bråk</em> i fyran, <em>likvärdiga bråk</em> i
+          femman, <em>procent</em> i sexan, <em>procenträkning</em> i sjuan
+          och <em>förändringsfaktor</em> i åttan. I nian handlar samma kedja
+          om <strong>ränta, lån och privatekonomi</strong>.
         </p>
         <p>
-          Tårtbitarna i trean och räntan på första bostadslånet är samma
-          kunskap, åtta år senare.
+          Tårtbitarna i trean och räntan på det första bostadslånet är samma
+          kunskap, i olika stadier, med åtta år emellan.
         </p>
       {:else if i === 6}
         <p>
-          Så vad händer om en elev är borta, okoncentrerad eller utan stöd de
-          veckor i fyran när <strong>bråkbegreppet</strong> gås igenom — och
-          ingen upptäcker det?
+          Vad händer då om en elev är frånvarande, okoncentrerad eller utan
+          stöd under de veckor i årskurs 4 när <strong>bråkbegreppet</strong>
+          införs, och ingen upptäcker det?
         </p>
         <p>
-          <strong class="rod">20 begrepp</strong> — procent, sannolikhet,
-          förändringsfaktor, privatekonomi — står nu på ett fundament som inte
-          finns. Skolan går vidare enligt planen. Eleven sitter kvar på varje
-          lektion och förstår mindre och mindre, utan att någon ser var det
-          egentligen brast.
+          <strong class="rod">20 begrepp</strong>, bland annat procent,
+          sannolikhet, förändringsfaktor och privatekonomi, bygger vidare på
+          det momentet. Undervisningen går vidare enligt planeringen, medan
+          eleven förstår allt mindre av det som följer. Utan rätt underlag är
+          det svårt för skolan att se var den ursprungliga luckan finns.
         </p>
       {:else if i === 7}
         <p>
-          Det här är inte en metafor vi valt för att den är vacker — det är
-          ett av de mest belagda resultaten i utbildningsforskningen.
+          Att matematiken är uppbyggd på det här sättet är inte en bild vi
+          valt själva. Det hör till de mest belagda resultaten i
+          utbildningsforskningen.
         </p>
         <p>
-          Tre studier, tre olika länder, samma slutsats: det tidiga avgör
-          mest, bråken är gångjärnet mellan aritmetik och algebra, och gap
-          som lämnas ifred växer av sig själva. Kumulativitet, mätt.
+          Tre studier från olika länder pekar åt samma håll: tidiga
+          matematikkunskaper har stor betydelse för senare resultat,
+          förståelsen av bråk är avgörande för övergången till algebra, och
+          skillnader som inte åtgärdas tenderar att växa över tid.
         </p>
       {:else if i === 8}
         <p>
-          Grafen förklarar också något varje lärare hört tusen gånger:
-          <em>"jag fattar ingenting, matte är svårt"</em>. Se på de två
-          tornen: <strong>samma klossar, i samma ordning</strong>. Till
-          vänster blir raderna klara och försvinner — det är ett moment som
-          automatiserats, och arbetsminnet är fritt för nästa. Till höger
-          lämnades ett enda hål i fyran.
+          Bilden med de två tornen illustrerar något många lärare känner
+          igen: elever som upplever att matematiken plötsligt blivit
+          obegriplig. Båda tornen får <strong>samma klossar i samma
+          ordning</strong>. Till vänster blir raderna kompletta och
+          försvinner; momenten är befästa och arbetsminnet frigörs för nästa
+          steg. Till höger lämnades ett enda hål i årskurs 4.
         </p>
         <p>
-          Raderna ovanför hålet blir aldrig klara. Golvet stiger, varje ny
-          kloss landar snett, och spelaren jobbar hårdare för sämre resultat
-          — <strong>fast bitarna är exakt desamma</strong>. Det som känns som
-          <em>"jag är dålig på matte"</em> är oftast
-          <strong>"jag saknar ett begrepp från tre årskurser sedan"</strong>.
-          Svårt är inte samma sak som obegåvad. Det är oftast bara olagat.
+          Raderna ovanför hålet blir aldrig kompletta, och nya luckor
+          uppstår ovanpå den första. Eleven arbetar hårdare men får sämre
+          resultat, trots att uppgifterna är desamma. Det som upplevs som
+          <em>"jag är dålig på matte"</em> handlar ofta om
+          <strong>ett begrepp som saknas sedan flera årskurser
+          tillbaka</strong> — en lucka som går att åtgärda, inte en brist på
+          begåvning.
         </p>
       {:else if i === 9}
         <p>
-          Två saker i elevernas vardag har samtidigt gjort kedjorna svårare
-          att bygga. Den ena är <strong>fokus</strong>: ett resonemang i åtta
-          steg måste hållas ihop i arbetsminnet från början till slut — bryts
-          tråden vid steg tre finns inget att fästa steg fyra i. Ett ämne som
-          byggs i kedjor drabbas hårdare av splittrad uppmärksamhet än något
-          annat.
+          Två förändringar i elevernas vardag har samtidigt gjort kedjorna
+          svårare att bygga. Den första gäller
+          <strong>koncentration</strong>. Ett resonemang i flera steg måste
+          hållas samman i arbetsminnet från början till slut. Bryts
+          uppmärksamheten mitt i behöver eleven börja om, och ett ämne som
+          bygger på långa kedjor påverkas mer än andra.
         </p>
         <p>
-          Den andra är att <strong>vardagens gratis matteträning
-          försvann</strong>. En generation tränade taluppfattning dagligen
-          utan att kalla det matte — växel på hundralappen, veckopeng i mynt.
-          Kurvan här intill är verklig statistik: på tolv år föll
-          kontantköpen från 39 till 8 procent. Talen barn möter är siffror på
-          en skärm, inte mängder i handen — klassrummet måste numera stå för
-          nästan hela träningen.
+          Den andra gäller <strong>vardagens träning</strong>. Tidigare
+          generationer övade taluppfattning dagligen utan att tänka på det,
+          bland annat med kontanter och växelpengar. Diagrammet bygger på
+          verklig statistik från Riksbanken: på tolv år minskade andelen
+          kontantköp från 39 till 8 procent. Barn möter i dag oftare tal som
+          siffror på en skärm än som mängder i handen, och skolan får därmed
+          stå för en större del av träningen.
         </p>
       {:else if i === 10}
         <p>
-          Fyll i vad som helst — svaret blir detsamma. En femtonåring som
-          väljer bort matten fattar ett beslut om en framtid hen ännu inte
-          kan se. Det är feltänkets kärna: <strong>man vet inte vilka dörrar
-          man stänger, för man har inte hunnit upptäcka att de
-          finns</strong>. Undersköterskan visste inte att jobbet innehåller
-          läkemedelsberäkning. Elektrikern visste inte att Ohms lag är
-          algebra. Förrän de stod där.
+          Frågan förtjänar ett ärligt svar, oavsett vilket yrke man sätter
+          in i den. En femtonåring som väljer bort matematiken fattar ett
+          beslut om en framtid som ännu inte går att överblicka:
+          <strong>man vet inte vilka vägar man stänger, eftersom man ännu
+          inte har upptäckt att de finns</strong>. Få blivande
+          undersköterskor vet att yrket kräver läkemedelsberäkning, och få
+          blivande elektriker att Ohms lag är algebra.
         </p>
         <p>
-          Prova själv i panelen: välj ett drömyrke och se vilken matte som
-          gömmer sig i det. Poängen är inte något enskilt exempel — det är
-          att <strong>ingen i nian vet vilken av dörrarna hen själv kommer
-          vilja öppna om fem år</strong>. Det enda sättet att hålla alla
-          öppna är att grunden följer med.
+          Panelen intill visar tolv vanliga yrkesval och den matematik som
+          ingår i dem. Ingen elev i årskurs 9 vet säkert vilket av dem som
+          blir aktuellt om fem år. Godkänd matematik är det som håller
+          alternativen öppna.
         </p>
       {:else if i === 11}
         <p>
-          Om grafen stämmer borde hålen synas i vår egen data — långt innan
-          betygen sätts. Så vi följde <strong>årskullen som gick ut nian i
-          våras</strong> bakåt: nationella provet i åk 3 våren 2019, åk 6 våren
-          2022, åk 9 våren 2025.
+          Om grafen stämmer bör luckorna synas i resultaten långt innan
+          betygen sätts. Vi följde därför <strong>årskullen som gick ut
+          årskurs 9 i våras</strong> bakåt i tiden: nationella provet i
+          årskurs 3 våren 2019, i årskurs 6 våren 2022 och i årskurs 9 våren
+          2025.
         </p>
         <p>
-          Andelen som inte når målen växer för varje kontrollstation:
-          {String(data.kohort.checkpoints[0].andel).replace(".", ",")}&nbsp;% →
-          {String(data.kohort.checkpoints[1].andel).replace(".", ",")}&nbsp;% →
+          Andelen elever som inte når kravnivån ökar vid varje mättillfälle:
+          {String(data.kohort.checkpoints[0].andel).replace(".", ",")}&nbsp;%,
+          {String(data.kohort.checkpoints[1].andel).replace(".", ",")}&nbsp;% och till sist
           <strong>{String(data.kohort.checkpoints[2].andel).replace(".", ",")}&nbsp;%</strong>.
-          Gapet stängs inte av sig självt. Det växer — precis som
-          Matteuseffekten säger.
+          Skillnaderna jämnas inte ut under skolgången utan förstärks. Det
+          är samma mönster som forskningen beskriver.
         </p>
       {:else if i === 12}
         <p>
-          Men det starkaste beviset är att följa <strong>samma barn</strong>.
-          Dela årskullen i två grupper efter ett enda mått: klarade de
-          kravnivån på nationella provet i trean — som nioåringar?
+          Tydligast blir bilden när man följer <strong>samma elever</strong>.
+          Vi delade årskullen i två grupper utifrån ett enda mått: om de
+          nådde kravnivån på det nationella provet i årskurs 3.
         </p>
         <div class="callout">
           <span class="callout-num">{Math.round(villkorade.fAndelUnder)}&nbsp;%</span>
-          <span class="callout-label">av dem som missade trean fick F i nian —
-            mot <strong>{Math.round(villkorade.fAndelNadde)}&nbsp;%</strong> av dem som klarade den</span>
+          <span class="callout-label">av dem som inte nådde kravnivån i trean fick F i nian
+            — mot <strong>{Math.round(villkorade.fAndelNadde)}&nbsp;%</strong> av dem som nådde den</span>
         </div>
         <p>
-          <strong>Ett prov i årskurs tre förutsäger slutbetyget nästan ett
-          decennium i förväg.</strong> Hålen försvann inte. De växte in i
-          betygskatalogen.
+          <strong>Ett prov i årskurs 3 ger alltså en stark indikation på
+          slutbetyget sex år senare.</strong> Luckorna försvann inte under
+          mellantiden.
         </p>
       {:else if i === 13}
         <p>
-          Och ju senare ett hål lagas, desto tyngre blir jobbet. Även av dem
-          som precis klarade sexan med ett E föll mer än var femte till F i
-          nian.
+          Ju senare en lucka åtgärdas, desto svårare blir det. Även bland
+          elever som klarade årskurs 6 med betyget E fick mer än var femte F
+          i årskurs 9.
         </p>
         <div class="callout">
           <span class="callout-num">8&nbsp;av&nbsp;10</span>
@@ -535,50 +541,53 @@
             ({String(data.kohort.fEfterAk6.find((d) => d.betygAk6 === "F").andelFAk9).replace(".", ",")}&nbsp;%)</span>
         </div>
         <p>
-          Högstadiet reparerar alltså sällan mellanstadiets hål — det bygger
-          vidare ovanpå dem, i högre tempo och med mer abstraktion. Ska
-          grunden lagas behöver det ske tidigare, medan mindre står ovanpå.
+          Högstadiet reparerar sällan mellanstadiets luckor. Undervisningen
+          bygger vidare i högre tempo och med mer abstrakta moment. Ska
+          grunden åtgärdas behöver det ske tidigare, medan färre moment
+          hunnit byggas ovanpå.
         </p>
       {:else if i === 14}
         <p>
-          Hur tidigt kan skolan se hålen? Redan <strong>första höstterminen i
-          årskurs 1</strong>. Skolverkets obligatoriska bedömningsstöd i
-          taluppfattning delar in eleverna i tre nivåer — och flaggar var
-          sjätte elev för stöd, flera år innan något betyg sätts.
+          Hur tidigt kan skolan se luckorna? Redan under
+          <strong>första höstterminen i årskurs 1</strong>. Skolverkets
+          obligatoriska bedömningsstöd i taluppfattning delar in eleverna i
+          tre nivåer och visar vilka som behöver stöd, flera år innan några
+          betyg sätts.
         </p>
         <p>
-          Två saker i bilden förtjänar oro: gruppen på lägre nivå
-          <strong>växer för varje år</strong> — och det som mäts är just de
-          grundstenar som resten av bygget ska stå på.
+          Två saker i bilden är oroande: gruppen på den lägre nivån
+          <strong>har vuxit för varje år</strong>, och det som mäts är just
+          de grundläggande färdigheter som resten av matematiken bygger på.
         </p>
       {:else if i === 15}
         <p>
-          Nationella provet i trean visar inte bara <em>vilka</em> elever som
-          behöver hjälp — det visar <em>med vad</em>. I våras föll flest på
-          <strong>mönster och talföljder</strong> och
-          <strong>skriftliga räknemetoder</strong>: det tidiga algebratänket
-          och positionssystemet.
+          Det nationella provet i årskurs 3 visar inte bara <em>vilka</em>
+          elever som behöver stöd, utan också <em>inom vilka områden</em>. I
+          våras var det flest som inte nådde kravnivån i
+          <strong>mönster och talföljder</strong> samt
+          <strong>skriftliga räknemetoder</strong>, det vill säga det tidiga
+          algebratänkandet och positionssystemet.
         </p>
         <p>
-          Titta tillbaka på grafen: det är precis de stenar som bråk,
-          ekvationer och funktioner ska stå på. Var fjärde elev
-          ({String(data.tidigaSignaler.npAk3MinstEtt).replace(".", ",")}&nbsp;%) missade minst
-          ett delprov — rätt läst är det inte bara ett prov, det är en karta
-          över var grunden behöver förstärkas. Sex år innan betyget sätts.
+          Det är samma områden som bråk, ekvationer och funktioner senare
+          bygger på. Var fjärde elev
+          ({String(data.tidigaSignaler.npAk3MinstEtt).replace(".", ",")}&nbsp;%) nådde inte
+          kravnivån i minst ett delprov. Rätt använt är provet en karta över
+          var grunden behöver förstärkas, sex år innan betyget sätts.
         </p>
       {:else if i === 16}
         <p>
-          Det här är den ljusa punkten: <strong>kumulativiteten går åt båda
-          hållen</strong>. Samma struktur som gör tidiga hål så dyra gör
-          tidiga lagningar ovanligt lönsamma — ett lagat bråkbegrepp i fyran
-          bär tjugo begrepp ovanför sig.
+          Sambandet går åt båda hållen. Samma uppbyggnad som gör tidiga
+          luckor kostsamma gör <strong>tidiga insatser
+          verkningsfulla</strong>: ett åtgärdat bråkbegrepp i årskurs 4 bär
+          de tjugo begrepp som bygger på det.
         </p>
         <p>
-          Och forskningen visar att det fungerar: intensiv, riktad undervisning
-          i små grupper på tidiga signaler har bland de största uppmätta
-          effekterna i utbildningsforskningen. Signalerna finns — i ettans
-          bedömningsstöd, i treans delprov. Frågan är inte var hålen sitter.
-          Frågan är vem som lagar dem, och när.
+          Forskningen visar också att det fungerar. Intensiv, riktad
+          undervisning i liten grupp utifrån tidiga signaler hör till de
+          insatser som har störst uppmätt effekt. Underlagen finns redan, i
+          ettans bedömningsstöd och i treans delprov. Frågan är hur de
+          används, och när.
         </p>
       {/if}
     </section>

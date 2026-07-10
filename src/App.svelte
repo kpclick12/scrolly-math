@@ -97,11 +97,12 @@
       <span class="hero-line2">i grunden</span>
     </h1>
     <p class="subtitle">
-      Var fjärde elev i nian klarade inte nationella provet i matematik i
-      våras, och {fmt(ov.obehoriga)} lämnade grundskolan utan behörighet till
-      gymnasiet. Matematik byggs nedifrån — varje nytt moment står på det
-      förra. Det här är berättelsen om var grunden brister, hur tidigt hålen
-      syns och varför de går att laga. I data, läsåret {ov.lasar}.
+      Var fjärde elev i årskurs 9 klarade inte det nationella provet i
+      matematik i våras, och {fmt(ov.obehoriga)} elever lämnade grundskolan
+      utan behörighet till gymnasiet. Matematik byggs nedifrån: varje nytt
+      moment förutsätter det förra. Det här är en genomgång i data av var
+      grunden brister, hur tidigt luckorna syns och varför de går att
+      åtgärda. Läsåret {ov.lasar}.
     </p>
     <p class="data-note">Data: syntetisk testdata (ej verkliga elevuppgifter).</p>
     <p class="scroll-hint">Scrolla<span class="scroll-tick">|</span></p>
@@ -133,26 +134,28 @@
       <article>
         <h3>Politiker &amp; förvaltning</h3>
         <p>
-          Flytta resurserna dit hävstången är störst: F–åk 3. Följ andelen på
-          lägre nivå i ettans bedömningsstöd och treans delprov som
-          styrsignaler — inte bara nians betyg, när det är åtta år för sent.
+          Prioritera resurser till de tidiga årskurserna, där varje insats
+          får störst effekt. Använd andelen elever på lägre nivå i ettans
+          bedömningsstöd och resultaten på treans delprov som
+          styrinformation, inte enbart slutbetygen i årskurs 9.
         </p>
       </article>
       <article>
         <h3>Rektorer &amp; lärare</h3>
         <p>
-          Behandla varje rött delprov i trean som en remiss, inte en notering.
-          Intensiv, riktad undervisning i liten grupp på utpekade begrepp har
-          bland de största uppmätta effekterna i utbildningsforskningen.
+          Låt varje delprov under kravnivån i årskurs 3 följas av en konkret
+          insats. Intensiv, riktad undervisning i liten grupp utifrån
+          utpekade begrepp hör till de insatser som har störst uppmätt
+          effekt i utbildningsforskningen.
         </p>
       </article>
       <article>
         <h3>Vårdnadshavare</h3>
         <p>
-          Fråga inte "hur går det i matte?" — fråga <em>vilket begrepp</em>
-          klassen arbetar med och be skolan visa var ditt barn står i ettans
-          och treans avstämningar. Ett hål som lagas i fyran är billigt.
-          Samma hål i nian kostar gymnasieplatsen.
+          Fråga vilket område klassen arbetar med och be skolan visa var
+          ditt barn står i ettans och treans avstämningar. En lucka som
+          åtgärdas i årskurs 4 kräver en liten insats. Samma lucka i årskurs
+          9 kan avgöra gymnasievalet.
         </p>
       </article>
     </div>
@@ -167,11 +170,11 @@
       matematik.
     </h2>
     <p class="epilog-text">
-      För dem stängdes gymnasiedörren av ett enda ämne. Hålen syntes redan i
-      ettans bedömningsstöd och i treans nationella prov — sex år innan
-      betygen sattes. Ett hål i grunden läker inte av sig självt, och för
-      varje årskurs står mer ovanpå det. Men det går att laga. Ingenstans är
-      lagningen enklare och billigare än i början.
+      För dem avgjordes gymnasievalet av ett enda ämne. Luckorna syntes
+      redan i ettans bedömningsstöd och i treans nationella prov, sex år
+      innan betygen sattes. En lucka i grunden försvinner inte av sig själv,
+      och för varje årskurs byggs mer ovanpå den. Men den går att åtgärda,
+      och ingenstans är det enklare än i början.
     </p>
   </div>
 </section>

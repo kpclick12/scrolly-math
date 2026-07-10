@@ -144,9 +144,10 @@
     <span class="legend-item"><span class="swatch swatch-hal"></span>hål — missat moment</span>
   </div>
   <p class="note">
-    Klossarna är moment ur kursplanens områden — samma färger som i
-    begreppsgrafen. Hålet går inte att fylla i efterhand utan att lyfta bort
-    allt ovanpå. Illustration, inte spel.
+    Klossarna är moment ur kursplanens områden, med samma färger som i
+    begreppsgrafen. Hålet går inte att fylla i efterhand utan att först
+    lyfta bort allt som byggts ovanpå. Bilden är en illustration, inte ett
+    spel.
   </p>
 </figure>
 

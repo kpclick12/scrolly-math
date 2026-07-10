@@ -18,7 +18,7 @@
       vag: "Bygg- och anläggningsprogrammet",
       visual: "takstol",
       punch:
-        "Pythagoras i varje takstol, skala 1:50 på varje ritning. Räknefel syns inte på papperet — de syns på taket.",
+        "Pythagoras i varje takstol och skala 1:50 på varje ritning. Ett räknefel som inte syns på papperet syns desto mer på taket.",
     },
     {
       id: "musiker",
@@ -34,7 +34,7 @@
       vag: "El- och energiprogrammet",
       rakning: ["Ugnen drar 2 300 W på 230 V.", "I = P ÷ U = 2 300 ÷ 230 = 10 A", "Säkringen är på 10 A — går precis. Eller?"],
       punch:
-        "Ohms lag är en formel man måste kunna lösa ut åt alla håll — algebrakedjan. Fel svar kan börja brinna.",
+        "Ohms lag är en formel som måste kunna lösas ut åt alla håll — algebrakedjan. Räknefel i elarbeten kan få allvarliga följder.",
     },
     {
       id: "kock",
@@ -48,7 +48,7 @@
       namn: "Frisör med egen salong",
       vag: "Hantverksprogrammet + F-skatt",
       rakning: ["Klippning 620 kr inkl. 25 % moms.", "620 ÷ 1,25 = 496 kr till dig", "Hyra, försäkring, pension — kvar per klippning?"],
-      punch: "Egenföretagarens vardag är procent och förändringsfaktor. Den som inte kan räkna baklänges på moms jobbar gratis.",
+      punch: "Egenföretagarens vardag är procent och förändringsfaktor. Den som inte kan räkna baklänges på momsen sätter fel pris.",
     },
     {
       id: "spelutvecklare",
@@ -62,7 +62,7 @@
       namn: "Influencer",
       vag: "Eget företag från dag ett",
       rakning: ["120 000 visningar · 45 kr CPM", "120 000 ÷ 1 000 × 45 = 5 400 kr", "− 30 % skatt → 3 780 kr. Värt klippet?"],
-      punch: "CPM, engagemang i procent, skatt och moms — den som inte räknar själv blir räknad på.",
+      punch: "CPM, engagemang i procent, skatt och moms — den som inte kan räkna själv får svårt att granska sina egna avtal.",
     },
     {
       id: "polis",
@@ -76,7 +76,7 @@
       namn: "Sjuksköterska",
       vag: "Högskola — kräver Matematik 2",
       rakning: ["Dropp: 1 000 ml på 8 timmar.", "1 000 ÷ 8 = 125 ml/h", "Droppräknare: 125 × 20 ÷ 60 ≈ 42 droppar/min"],
-      punch: "Här räcker inte ens nians matte — högskolan kräver gymnasiets Matematik 2. Dörren bakom dörren.",
+      punch: "Här räcker inte nians matematik: högskolans sjuksköterskeutbildning kräver dessutom gymnasiekursen Matematik 2.",
     },
     {
       id: "pilot",
